@@ -21,6 +21,7 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<leader>o", ":only<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -31,12 +32,18 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<Right>", ":bnext<CR>", opts)
+keymap("n", "<Left>", ":bprevious<CR>", opts)
+keymap("n", "<Leader><Space>", "<c-^>", opts)
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
+
+keymap("n", "<leader>w", ":write<CR>", opts)
+keymap("n", ";", ":", opts)
 
 -- Better paste
 keymap("v", "p", "P", opts)
@@ -57,9 +64,15 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>ft", ":Telescope treesitter<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+keymap("n", "<leader>fc", ":Telescope commands<CR>", opts)
+keymap("n", "<leader>fh", ":Telescope command_history<CR>", opts)
+keymap("n", "<leader>fs", ":Telescope search_history<CR>", opts)
+keymap("n", "<leader>fm", ":Telescope keymaps<CR>", opts)
+keymap("n", "<leader>fd", ":Telescope diagnostics<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
