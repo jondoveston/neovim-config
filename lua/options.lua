@@ -47,3 +47,24 @@ vim.opt.colorcolumn = '80'
 vim.opt.wildignore = { '*/cache/*', '*/tmp/*', '*.so', '*.swp', '*.zip' }
 vim.opt.listchars = { eol = '↲', tab = '▸ ', trail = '·' }
 vim.opt.modeline = false
+
+vim.g.do_filetype_lua = 1
+vim.filetype.add({
+  pattern = {
+    ["playbook.ya?ml"] = "yaml.ansible",
+    ["site.ya?ml"] = "yaml.ansible",
+    ["main.ya?ml"] = "yaml.ansible",
+    [".*/[^.]+%.([^.]+)%.j2"] = function(path, bufnr, ext) return ext .. ".jinja2" end,
+    [".*/[^.]+%.j2"] = "jinja2",
+    [".*/group_vars/.+%.ya?ml"] = "yaml.ansible",
+    [".*/host_vars/.+%.ya?ml"] = "yaml.ansible",
+    [".*/tasks/.+%.ya?ml"] = "yaml.ansible",
+    [".*/handlers/.+%.ya?ml"] = "yaml.ansible",
+    [".*/playbooks/.+%.ya?ml"] = "yaml.ansible",
+
+    [".*/templates/.+%.yaml"] = "helm",
+    [".*/templates/.+%.tpl"] = "helm",
+    [".+%.gotmpl"] = "helm",
+    ["helmfile.*%.yaml"] = "helm",
+  },
+})
