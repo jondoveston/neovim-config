@@ -62,4 +62,9 @@ M.servers = {
   -- "tflint",
 }
 
+M.tools = {
+  -- "gotests",
+  -- "misspell",
+}
+
 return M

@@ -6,6 +6,9 @@ local M = {
     {
       "williamboman/mason-lspconfig.nvim",
     },
+    {
+      "WhoIsSethDaniel/mason-tool-installer.nvim"
+    },
   },
 }
 
@@ -27,6 +30,9 @@ function M.config()
   require("mason-lspconfig").setup {
     ensure_installed = require("utils").servers,
     automatic_installation = true,
+  }
+  require("mason-tool-installer").setup {
+    ensure_installed = require("utils").tools,
   }
 end
 
