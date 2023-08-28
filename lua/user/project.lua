@@ -6,6 +6,9 @@ local M = {
       event = "Bufenter",
       cmd = { "Telescope" },
     },
+    {
+      "direnv/direnv.vim",
+    }
   },
 }
 
@@ -17,7 +20,9 @@ function M.config()
     detection_methods = { "pattern" },
 
     -- patterns used to detect root dir, when **"pattern"** is in detection_methods
-    patterns = { ".git", "Makefile", "package.json" },
+    patterns = { ".git", ".obsidian" },
+
+    silent_chdir = false,
   }
 
   local telescope = require "telescope"
