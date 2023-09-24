@@ -26,6 +26,15 @@ M.opts = {
       },
     },
   },
+  pickers = {
+    buffers = {
+      mappings = {
+        i = {
+          ["<C-q>"] = actions.delete_buffer
+        }
+      }
+    }
+  }
 }
 
 return M

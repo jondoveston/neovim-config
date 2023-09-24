@@ -40,7 +40,7 @@ keymap("n", "<Leader><Space>", "<c-^>", opts)
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Close buffers
-keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
+keymap("n", "<C-q>", "<cmd>Bdelete!<CR>", opts)
 
 keymap("n", "<leader>w", ":write<CR>", opts)
 keymap("n", ";", ":", opts)
