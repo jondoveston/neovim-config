@@ -40,7 +40,7 @@ function M.config()
   }
 
   local spaces = function()
-    return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+    return "s:" .. vim.api.nvim_buf_get_option(0, "shiftwidth") .. " w:" .. require('wrapping').get_current_mode()
   end
   lualine.setup {
     extensions = { "trouble" },
