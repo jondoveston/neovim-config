@@ -58,7 +58,7 @@ M.servers = {
   -- "typeprof",
 
   -- terraform
-  -- "terraformls",
+  "terraformls",
   -- "tflint",
 }
 
