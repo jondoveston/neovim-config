@@ -107,12 +107,15 @@ function M.config()
       -- formatting.cbfmt,
 
       -- yaml
-      diagnostics.yamllint,
-      formatting.yamlfmt.with { extra_args = { "-formatter", "include_document_start=true" } },
+      -- diagnostics.yamllint,
+      -- formatting.yamlfmt.with { extra_args = { "-formatter", "include_document_start=true" } },
       -- formatting.yq,
 
       -- docker
       diagnostics.hadolint,
+
+      -- make
+      diagnostics.checkmake,
 
       -- general
       formatting.prettier.with { filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "css", "scss", "less", "html", "graphql", "handlebars", "toml" }, extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } },

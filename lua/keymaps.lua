@@ -73,6 +73,7 @@ keymap("n", "<leader>fh", ":Telescope command_history<CR>", opts)
 keymap("n", "<leader>fs", ":Telescope search_history<CR>", opts)
 keymap("n", "<leader>fm", ":Telescope keymaps<CR>", opts)
 keymap("n", "<leader>fd", ":Telescope diagnostics<CR>", opts)
+keymap("n", "<leader>fy", ":Telescope yaml_schema<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
@@ -102,3 +103,19 @@ keymap("n", "<leader>xd", "<cmd>lua require'trouble'.open('document_diagnostics'
 keymap("n", "<leader>xq", "<cmd>lua require'trouble'.open('quickfix')<cr>", opts)
 keymap("n", "<leader>xl", "<cmd>lua require'trouble'.open('loclist')<cr>", opts)
 keymap("n", "gR", "<cmd>lua require'trouble'.open('lsp_references')<cr>", opts)
+
+-- function gitlab_lint()
+--   local content = table.concat(vim.api.nvim_buf_get_lines(0, 0, -1, false), "\n")
+--   local token = os.getenv "GITLAB_TOKEN"
+--   local curl = require "plenary.curl"
+--   local res = curl.post(
+--     "https://gitlab.com/api/v4/projects/18899486/ci/lint",
+--     { body = content, headers = { content_type = "application/yaml", ["PRIVATE-TOKEN"] = token }, })
+--   vim.print(res)
+--   vim.print(res.body)
+--   vim.print(vim.fn.json_decode(res.body))
+-- end
+-- keymap("n", "<leader>gl", "<cmd>lua gitlab_lint()<cr>", opts)
+
+-- Copilot
+-- keymap("i", "<c-s>", "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<cr>", opts)

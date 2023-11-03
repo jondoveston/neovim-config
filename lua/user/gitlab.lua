@@ -1,0 +1,17 @@
+-- local M = {
+--   url = "git@gitlab.com:gitlab-org/editor-extensions/gitlab.vim.git",
+--   lazy = false,
+-- }
+--
+-- M.name = "gitlab"
+-- function M.config()
+--   require('gitlab').setup {
+--   statusline = {
+--     enabled = false
+--   }
+-- }
+--
+-- end
+--
+-- return M
+return {}

@@ -82,3 +82,12 @@ vim.g.ruby_host_prog = vim.env.RUBY_HOST_PROG
 end
 
 vim.g.loaded_perl_provider = 0
+
+-- -- Make line numbers default
+-- vim.wo.number = true
+-- vim.wo.relativenumber = true
+-- -- Close netrw buffers after selecting a file
+-- vim.g.netrw_fastbrowse = 0
+-- vim.o.softtabstop = vim.o.tabstop
+-- vim.o.shell = '/usr/bin/zsh'
+-- vim.o.background = 'dark'
