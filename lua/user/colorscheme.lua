@@ -10,6 +10,10 @@ function M.config()
   if not status_ok then
     return
   end
+
+  require("tokyonight").setup {
+    style = "storm"
+  }
 end
 
 return M

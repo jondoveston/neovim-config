@@ -40,8 +40,9 @@ function M.config()
   }
 
   local spaces = function()
-    return "s:" .. vim.api.nvim_buf_get_option(0, "shiftwidth") .. " w:" .. require('wrapping').get_current_mode()
+    return "s:" .. vim.api.nvim_buf_get_option(0, "shiftwidth") .. " w:" .. require("wrapping").get_current_mode()
   end
+
   lualine.setup {
     extensions = { "trouble" },
     options = {
@@ -56,7 +57,7 @@ function M.config()
     sections = {
       lualine_a = { "mode" },
       lualine_b = { "branch" },
-      lualine_c = { diagnostics, { 'filename', path = 1, } },
+      lualine_c = { diagnostics, { "filename", path = 1 } },
       lualine_x = { diff, spaces, "encoding", filetype },
       lualine_y = { location },
       lualine_z = { "progress" },
