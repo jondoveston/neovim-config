@@ -6,6 +6,9 @@ local M = {
     {
       "hrsh7th/cmp-nvim-lsp",
     },
+    {
+      "b0o/schemastore.nvim",
+    },
   },
 }
 
