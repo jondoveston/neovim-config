@@ -64,12 +64,12 @@ function M.config()
       -- diagnostics.revive,
       -- diagnostics.staticcheck,
 
-      -- shell TBD
+      -- shell
       -- formatting.shfmt,
       -- formatting.beautysh,
       -- formatting.shellharden,
-      -- code_actions.shellcheck,
-      -- diagnostics.shellcheck,
+      code_actions.shellcheck,
+      diagnostics.shellcheck,
       -- diagnostics.zsh,
 
       -- crystal

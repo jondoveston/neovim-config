@@ -63,6 +63,7 @@ M.servers = {
 }
 
 M.tools = {
+  "shellcheck",
   -- "gotests",
   -- "misspell",
 }
