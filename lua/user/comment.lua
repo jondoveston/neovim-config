@@ -1,6 +1,6 @@
 local M = {
   "numToStr/Comment.nvim",
-  event = {"BufRead", "BufNewFile"},
+  event = { "BufRead", "BufNewFile" },
   dependencies = {
     {
       "JoosepAlviste/nvim-ts-context-commentstring",
@@ -25,6 +25,10 @@ function M.config()
       elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
         location = require("ts_context_commentstring.utils").get_visual_start_location()
       end
+
+      require("ts_context_commentstring").setup {
+        enable_autocmd = false,
+      }
 
       return require("ts_context_commentstring.internal").calculate_commentstring {
         key = type,
