@@ -15,8 +15,20 @@ M.opts = {
   defaults = {
     prompt_prefix = " ",
     selection_caret = " ",
-    path_display = { "smart" },
+    path_display = { "absolute" },
     file_ignore_patterns = { ".git/", "node_modules" },
+    vimgrep_arguments = {
+      "rg",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
+      "--hidden",
+      "--glob",
+      "!.git/*",
+    },
     mappings = {
       i = {
         ["<Down>"] = actions.move_selection_next,
@@ -27,6 +39,9 @@ M.opts = {
     },
   },
   pickers = {
+    find_files = {
+      hidden = true,
+    },
     buffers = {
       mappings = {
         i = {
