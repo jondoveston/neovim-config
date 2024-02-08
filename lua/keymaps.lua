@@ -59,6 +59,9 @@ keymap("v", ">", ">gv", opts)
 
 -- Plugins --
 
+-- Obsidian
+keymap("n", "<leader>j", ":ObsidianToday<CR>", opts)
+
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
