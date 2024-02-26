@@ -9,11 +9,22 @@ local M = {
       "jay-babu/mason-null-ls.nvim",
       event = { "BufReadPre", "BufNewFile" },
     },
+    {
+      "gbprod/none-ls-luacheck.nvim",
+    },
+    {
+      "gbprod/none-ls-shellcheck.nvim",
+    },
   },
 }
 
 function M.config()
   local null_ls = require "null-ls"
+
+  null_ls.register(require("none-ls-luacheck.diagnostics.luacheck"))
+  null_ls.register(require("none-ls-shellcheck.diagnostics"))
+  null_ls.register(require("none-ls-shellcheck.code_actions"))
+
   -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins
   local formatting = null_ls.builtins.formatting
   local diagnostics = null_ls.builtins.diagnostics
@@ -48,7 +59,7 @@ function M.config()
       -- lua
       formatting.stylua,
       -- formatting.lua_format,
-      diagnostics.luacheck,
+      -- diagnostics.luacheck, external plugin
       -- diagnostics.selene,
 
       -- golang
@@ -68,8 +79,8 @@ function M.config()
       -- formatting.shfmt,
       -- formatting.beautysh,
       -- formatting.shellharden,
-      code_actions.shellcheck,
-      diagnostics.shellcheck,
+      -- code_actions.shellcheck, external plugin
+      -- diagnostics.shellcheck, external plugin
       -- diagnostics.zsh,
 
       -- crystal
@@ -79,7 +90,7 @@ function M.config()
       -- formatting.terraform_fmt,
 
       -- json
-      diagnostics.jsonlint,
+      -- diagnostics.jsonlint, deprecated
       -- formatting.json_tool,
 
       -- ruby TBD
@@ -118,9 +129,25 @@ function M.config()
       diagnostics.checkmake,
 
       -- general
-      formatting.prettier.with { filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "css", "scss", "less", "html", "graphql", "handlebars", "toml" }, extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } },
-      formatting.trim_whitespace,
-      formatting.trim_newlines,
+      formatting.prettier.with {
+        filetypes = {
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact",
+          "vue",
+          "css",
+          "scss",
+          "less",
+          "html",
+          "graphql",
+          "handlebars",
+          "toml",
+        },
+        extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
+      },
+      -- formatting.trim_whitespace, deprecated replace with editorconfig
+      -- formatting.trim_newlines, deprecated replace with editorconfig
       diagnostics.trail_space,
       diagnostics.todo_comments,
       hover.printenv,
@@ -131,7 +158,7 @@ function M.config()
 
       -- english TBD
       hover.dictionary,
-      diagnostics.misspell
+      -- diagnostics.misspell, deprecated
       -- completion.spell.with { filetypes = { "markdown" } },
       -- diagnostics.write_good,
       -- code_actions.proselint,
