@@ -19,7 +19,7 @@ M.opts = {
   workspaces = {
     {
       name = "obsidian",
-      path = "~/obsidian/obsidian",
+      path = "~/obsidian",
     },
   },
   daily_notes = {
