@@ -26,6 +26,9 @@ local M = {
     {
       "hrsh7th/cmp-nvim-lua",
     },
+    {
+      "onsails/lspkind-nvim",
+    },
   },
   event = {
     "InsertEnter",
@@ -37,42 +40,14 @@ function M.config()
   local cmp = require "cmp"
   local luasnip = require "luasnip"
   require("luasnip/loaders/from_vscode").lazy_load()
-  require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/luasnip/"})
+  require("luasnip.loaders.from_lua").load { paths = "~/.config/nvim/luasnip/" }
+
+  local lspkind = require "lspkind"
 
   local check_backspace = function()
     local col = vim.fn.col "." - 1
     return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
   end
-
-  local kind_icons = {
-    Text = "󰉿",
-    Method = "m",
-    Function = "󰊕",
-    Constructor = "",
-    Field = "",
-    Variable = "󰆧",
-    Class = "󰌗",
-    Interface = "",
-    Module = "",
-    Property = "",
-    Unit = "",
-    Value = "󰎠",
-    Enum = "",
-    Keyword = "󰌋",
-    Snippet = "",
-    Color = "󰏘",
-    File = "󰈙",
-    Reference = "",
-    Folder = "󰉋",
-    EnumMember = "",
-    Constant = "󰇽",
-    Struct = "",
-    Event = "",
-    Operator = "󰆕",
-    TypeParameter = "󰊄",
-    Codeium = "󰚩",
-    Copilot = "",
-  }
 
   cmp.setup {
     snippet = {
@@ -123,19 +98,68 @@ function M.config()
       }),
     },
     formatting = {
-      fields = { "kind", "abbr", "menu" },
-      format = function(entry, vim_item)
-        vim_item.kind = kind_icons[vim_item.kind]
-        vim_item.menu = ({
-          nvim_lsp = "",
-          nvim_lua = "",
-          luasnip = "",
-          buffer = "",
-          path = "",
-          emoji = "",
-        })[entry.source.name]
-        return vim_item
-      end,
+      format = lspkind.cmp_format {
+        -- defines how annotations are shown
+        -- default: symbol
+        -- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
+        mode = "symbol_text",
+
+        -- default symbol map
+        -- can be either 'default' (requires nerd-fonts font) or
+        -- 'codicons' for codicon preset (requires vscode-codicons font)
+        --
+        -- default: 'default'
+        preset = "codicons",
+
+        show_labelDetails = true,
+
+        -- override preset symbols
+        --
+        -- default: {}
+        symbol_map = {
+          Text = "󰉿",
+          Method = "󰆧",
+          -- Method = "m",
+          Function = "󰊕",
+          Constructor = "",
+          -- Constructor = "",
+          Field = "󰜢",
+          -- Field = "",
+          Variable = "󰀫",
+          -- Variable = "󰆧",
+          Class = "󰠱",
+          -- Class = "󰌗",
+          Interface = "",
+          Module = "",
+          Property = "󰜢",
+          -- Property = "",
+          Unit = "󰑭",
+          Value = "󰎠",
+          Enum = "",
+          Keyword = "󰌋",
+          Snippet = "",
+          -- Snippet = "",
+          Color = "󰏘",
+          File = "󰈙",
+          Reference = "󰈇",
+          -- Reference = "",
+          Folder = "󰉋",
+          EnumMember = "",
+          Constant = "󰏿",
+          -- Constant = "󰇽",
+          Struct = "󰙅",
+          -- Struct = "",
+          Event = "",
+          Operator = "󰆕",
+          TypeParameter = "󰊄",
+          Codeium = "󰚩",
+          Copilot = "",
+        },
+
+        before = function(entry, vim_item)
+          return vim_item
+        end,
+      },
     },
     sources = {
       { name = "copilot" },
