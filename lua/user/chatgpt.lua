@@ -10,7 +10,7 @@ local M = {
 }
 
 function M.config()
-    require("chatgpt").setup()
+  require("chatgpt").setup()
 end
 
 return M

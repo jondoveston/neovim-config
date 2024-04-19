@@ -1,7 +1,7 @@
 local M = {
   "zbirenbaum/copilot.lua",
   event = "InsertEnter",
-  cmd = { "Copliot" },
+  cmd = { "Copilot" },
   dependencies = {
     {
       "zbirenbaum/copilot-cmp",
