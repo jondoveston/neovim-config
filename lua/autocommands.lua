@@ -13,6 +13,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   callback = function()
     vim.opt_local.wrap = true
     vim.opt_local.spell = true
+    vim.opt_local.spelllang = { "en_us" }
   end,
 })
 -- Automatically close tab/vim when nvim-tree is the last window in the tab

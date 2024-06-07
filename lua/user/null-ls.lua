@@ -158,19 +158,19 @@ function M.config()
 
       -- english TBD
       hover.dictionary,
+      diagnostics.commitlint,
+      diagnostics.vale,
       -- diagnostics.misspell, deprecated
-      -- completion.spell.with { filetypes = { "markdown" } },
+      -- completion.spell.with({ filetypes = { "markdown" } }),
       -- diagnostics.write_good,
       -- code_actions.proselint,
       -- diagnostics.alex,
       -- diagnostics.textidote,
       -- formatting.textlint,
-      -- diagnostics.vale,
       -- diagnostics.typos,
       -- diagnostics.cspell,
       -- diagnostics.codespell.with({ filetypes = { "markdown", "go" } }),
       -- formatting.codespell.with({ filetypes = { "markdown", "go" } }),
-      -- diagnostics.commitlint,
     },
   }
 

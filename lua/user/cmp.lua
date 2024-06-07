@@ -27,7 +27,19 @@ local M = {
       "hrsh7th/cmp-nvim-lua",
     },
     {
+      "hrsh7th/cmp-calc",
+    },
+    {
+      "hrsh7th/cmp-omni",
+    },
+    {
       "onsails/lspkind-nvim",
+    },
+    {
+      "f3fora/cmp-spell",
+    },
+    {
+      "tzachar/cmp-ai",
     },
   },
   event = {
@@ -65,6 +77,17 @@ function M.config()
         i = cmp.mapping.abort(),
         c = cmp.mapping.close(),
       },
+      -- Manually trigger slow completion
+      ["<C-x>"] = cmp.mapping(
+        cmp.mapping.complete {
+          config = {
+            sources = cmp.config.sources {
+              { name = "cmp_ai" },
+            },
+          },
+        },
+        { "i" }
+      ),
       -- Accept currently selected item. If none selected, `select` first item.
       -- Set `select` to `false` to only confirm explicitly selected items.
       ["<CR>"] = cmp.mapping.confirm { select = true },
@@ -154,9 +177,14 @@ function M.config()
           TypeParameter = "󰊄",
           Codeium = "󰚩",
           Copilot = "",
+          LLM = "󰧑",
         },
-
+        -- The function below will be called before any actual modifications from lspkind
+        -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
         before = function(entry, vim_item)
+          if entry.source.name == "cmp_ai" then
+            vim_item.kind = "LLM"
+          end
           return vim_item
         end,
       },
@@ -168,6 +196,18 @@ function M.config()
       { name = "luasnip" },
       { name = "buffer" },
       { name = "path" },
+      { name = "calc" },
+      -- { name = "cmp_ai" },
+      { name = "omni", option = { disable_omnifuncs = { "v:lua.vim.lsp.omnifunc" } } },
+      {
+        name = "spell",
+        option = {
+          keep_all_entries = false,
+          enable_in_context = function()
+            return true
+          end,
+        },
+      },
     },
     confirm_opts = {
       behavior = cmp.ConfirmBehavior.Replace,
