@@ -1,6 +1,16 @@
 local M = {
   "nvim-lualine/lualine.nvim",
-  event = { "VimEnter", "InsertEnter", "BufReadPre", "BufAdd", "BufNew", "BufReadPost" },
+  event = {
+    "VimEnter",
+    "InsertEnter",
+    "BufReadPre",
+    "BufAdd",
+    "BufNew",
+    "BufReadPost"
+  },
+  dependencies = {
+    "folke/trouble.nvim",
+  },
 }
 
 function M.config()

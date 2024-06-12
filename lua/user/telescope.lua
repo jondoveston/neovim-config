@@ -6,10 +6,14 @@ local M = {
     {
       "ahmedkhalf/project.nvim",
     },
+    {
+      "folke/trouble.nvim",
+    },
   },
 }
 
 local actions = require "telescope.actions"
+local open_with_trouble = require("trouble.sources.telescope").open
 
 M.opts = {
   defaults = {
@@ -35,6 +39,10 @@ M.opts = {
         ["<Up>"] = actions.move_selection_previous,
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
+        ["<c-t>"] = open_with_trouble,
+      },
+      n = {
+        ["<c-t>"] = open_with_trouble,
       },
     },
   },

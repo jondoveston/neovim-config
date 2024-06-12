@@ -92,14 +92,6 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
 
--- Trouble
-keymap("n", "<leader>xx", "<cmd>lua require'trouble'.open()<cr>", opts)
-keymap("n", "<leader>xw", "<cmd>lua require'trouble'.open('workspace_diagnostics')<cr>", opts)
-keymap("n", "<leader>xd", "<cmd>lua require'trouble'.open('document_diagnostics')<cr>", opts)
-keymap("n", "<leader>xq", "<cmd>lua require'trouble'.open('quickfix')<cr>", opts)
-keymap("n", "<leader>xl", "<cmd>lua require'trouble'.open('loclist')<cr>", opts)
-keymap("n", "gR", "<cmd>lua require'trouble'.open('lsp_references')<cr>", opts)
-
 -- function gitlab_lint()
 --   local content = table.concat(vim.api.nvim_buf_get_lines(0, 0, -1, false), "\n")
 --   local token = os.getenv "GITLAB_TOKEN"
