@@ -1,7 +1,13 @@
 -- https://github.com/nvim-telescope/telescope.nvim
 local M = {
   "nvim-telescope/telescope.nvim",
-  dependencies = { { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true } },
+  dependencies = {
+    {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "make",
+      lazy = true,
+    },
+  },
 }
 
 function M.config()
@@ -12,15 +18,22 @@ function M.config()
     ["<leader>fc"] = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
     ["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Find files" },
     ["<leader>fp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-    ["<leader>ft"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+    ["<leader>fg"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
     ["<leader>fh"] = { "<cmd>Telescope help_tags<cr>", "Help" },
     ["<leader>fl"] = { "<cmd>Telescope resume<cr>", "Last Search" },
-    ["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
+    ["<leader>fo"] = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
+    ["<leader>fi"] = { "<cmd>Telescope git_files<cr>", "Git files" },
+    ["<leader>ft"] = { "<cmd>Telescope treesitter<cr>", "Treesitter" },
+    ["<leader>fC"] = { "<cmd>Telescope commands<cr>", "Find commands" },
+    ["<leader>fH"] = { "<cmd>Telescope commands_history<cr>", "Command history" },
+    ["<leader>fs"] = { "<cmd>Telescope search_history<cr>", "Search history" },
+    ["<leader>fm"] = { "<cmd>Telescope keymaps<cr>", "Find keymaps" },
+    ["<leader>fd"] = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
+    ["<leader>fy"] = { "<cmd>Telescope yaml_schema<cr>", "YAML schema" },
   }
 
   local icons = require "user.icons"
   local actions = require "telescope.actions"
-
 
   require("telescope").setup {
     defaults = {
@@ -71,6 +84,7 @@ function M.config()
       find_files = {
         theme = "dropdown",
         previewer = false,
+        hidden = true,
       },
 
       buffers = {
@@ -79,7 +93,7 @@ function M.config()
         initial_mode = "normal",
         mappings = {
           i = {
-            ["<C-d>"] = actions.delete_buffer,
+            ["<C-q>"] = actions.delete_buffer,
           },
           n = {
             ["dd"] = actions.delete_buffer,
