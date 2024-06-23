@@ -21,7 +21,7 @@ function M.config()
       lualine_y = { "progress" },
       lualine_z = {},
     },
-    extensions = { "quickfix", "man", "fugitive" },
+    extensions = { "quickfix", "man", "fugitive", "trouble" },
   }
 end
 
