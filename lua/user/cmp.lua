@@ -37,6 +37,15 @@ local M = {
     {
       "hrsh7th/cmp-nvim-lua",
     },
+    {
+      "hrsh7th/cmp-calc",
+    },
+    {
+      "hrsh7th/cmp-omni",
+    },
+    {
+      "f3fora/cmp-spell",
+    },
   },
 }
 
@@ -44,6 +53,7 @@ function M.config()
   local cmp = require "cmp"
   local luasnip = require "luasnip"
   require("luasnip/loaders/from_vscode").lazy_load()
+  require("luasnip.loaders.from_lua").load { paths = "~/.config/nvim/luasnip/" }
 
   vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
   vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
@@ -144,6 +154,16 @@ function M.config()
       { name = "path" },
       { name = "calc" },
       { name = "emoji" },
+      { name = "omni", option = { disable_omnifuncs = { "v:lua.vim.lsp.omnifunc" } } },
+      {
+        name = "spell",
+        option = {
+          keep_all_entries = false,
+          enable_in_context = function()
+            return true
+          end,
+        },
+      },
     },
     confirm_opts = {
       behavior = cmp.ConfirmBehavior.Replace,
