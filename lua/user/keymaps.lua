@@ -7,13 +7,6 @@ vim.g.maplocalleader = " "
 
 keymap("n", "<C-i>", "<C-i>", opts)
 
--- Better window navigation
-keymap("n", "<m-h>", "<C-w>h", opts)
-keymap("n", "<m-j>", "<C-w>j", opts)
-keymap("n", "<m-k>", "<C-w>k", opts)
-keymap("n", "<m-l>", "<C-w>l", opts)
-keymap("n", "<m-tab>", "<c-6>", opts)
-
 keymap("n", "n", "nzz", opts)
 keymap("n", "N", "Nzz", opts)
 keymap("n", "*", "*zz", opts)
