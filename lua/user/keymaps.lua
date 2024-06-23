@@ -7,6 +7,13 @@ vim.g.maplocalleader = " "
 
 keymap("n", "<C-i>", "<C-i>", opts)
 
+-- Navigate buffers
+keymap("n", "<S-l>", ":bnext<CR>", opts)
+keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<Right>", ":bnext<CR>", opts)
+keymap("n", "<Left>", ":bprevious<CR>", opts)
+keymap("n", "<Leader><Space>", "<c-^>", opts)
+
 keymap("n", "n", "nzz", opts)
 keymap("n", "N", "Nzz", opts)
 keymap("n", "*", "*zz", opts)
