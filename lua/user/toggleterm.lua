@@ -1,3 +1,4 @@
+-- https://github.com/akinsho/toggleterm.nvim
 local M = {
   "akinsho/toggleterm.nvim",
   event = "VeryLazy",

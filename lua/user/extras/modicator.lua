@@ -1,3 +1,4 @@
+-- https://github.com/mawkler/modicator.nvim
 local M = {
   "mawkler/modicator.nvim",
   event = "BufEnter",

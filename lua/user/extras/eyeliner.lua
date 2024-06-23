@@ -1,3 +1,4 @@
+-- https://github.com/jinh0/eyeliner.nvim
 local M = {
   "jinh0/eyeliner.nvim",
   event = "VeryLazy",

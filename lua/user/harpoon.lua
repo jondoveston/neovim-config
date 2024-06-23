@@ -1,3 +1,4 @@
+-- https://github.com/ThePrimeagen/harpoon
 local M = {
   "ThePrimeagen/harpoon",
   event = "VeryLazy",

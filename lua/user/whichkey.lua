@@ -1,3 +1,4 @@
+-- https://github.com/folke/which-key.nvim
 local M = {
   "folke/which-key.nvim",
 }

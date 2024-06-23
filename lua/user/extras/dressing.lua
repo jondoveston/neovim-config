@@ -1,3 +1,4 @@
+-- https://github.com/stevearc/dressing.nvim
 local M = {
   "stevearc/dressing.nvim",
   event = "VeryLazy",

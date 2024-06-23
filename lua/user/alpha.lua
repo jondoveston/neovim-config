@@ -1,3 +1,4 @@
+-- https://github.com/goolord/alpha-nvim
 local M = {
   "goolord/alpha-nvim",
   event = "VimEnter",

@@ -1,3 +1,4 @@
+-- https://github.com/kevinhwang91/nvim-ufo
 local M = {
   "kevinhwang91/nvim-ufo",
   dependencies = {

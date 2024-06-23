@@ -1,3 +1,4 @@
+-- https://github.com/stevearc/oil.nvim
 local M = {
   "stevearc/oil.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },

@@ -1,3 +1,4 @@
+-- https://github.com/0x100101/lab.nvim
 local M = {
   "0x100101/lab.nvim",
   build = "cd js && npm ci",

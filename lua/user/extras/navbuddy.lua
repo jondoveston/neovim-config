@@ -1,3 +1,4 @@
+-- https://github.com/SmiteshP/nvim-navbuddy
 local M = {
   "SmiteshP/nvim-navbuddy",
   dependencies = {

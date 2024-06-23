@@ -1,3 +1,4 @@
+-- https://github.com/tzachar/cmp-tabnine
 local M = {
     "tzachar/cmp-tabnine",
     event = "InsertEnter",

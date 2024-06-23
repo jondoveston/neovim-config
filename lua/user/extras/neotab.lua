@@ -1,3 +1,4 @@
+-- https://github.com/kawre/neotab.nvim
 local M = {
   "kawre/neotab.nvim",
   event = "InsertEnter",

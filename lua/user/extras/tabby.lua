@@ -1,3 +1,4 @@
+-- https://github.com/nanozuki/tabby.nvim
 local theme = {
   fill = "TabLineFill",
   head = "TabLine",

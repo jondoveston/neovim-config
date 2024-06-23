@@ -1,3 +1,4 @@
+-- https://github.com/nvim-treesitter/nvim-treesitter
 local M = {
   "nvim-treesitter/nvim-treesitter",
   event = { "BufReadPost", "BufNewFile" },

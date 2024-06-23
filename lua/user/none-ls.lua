@@ -1,3 +1,5 @@
+-- https://github.com/nvimtools/none-ls.nvim
+-- https://github.com/jay-babu/mason-null-ls.nvim
 local M = {
   "nvimtools/none-ls.nvim",
   dependencies = {

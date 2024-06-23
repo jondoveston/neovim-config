@@ -1,3 +1,4 @@
+-- https://github.com/NeogitOrg/neogit
 local M = {
   "neogitorg/neogit",
   event = "VeryLazy",

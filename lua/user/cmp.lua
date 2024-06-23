@@ -1,3 +1,4 @@
+-- https://github.com/hrsh7th/nvim-cmp
 local M = {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",

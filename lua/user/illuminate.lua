@@ -1,3 +1,4 @@
+-- https://github.com/RRethy/vim-illuminate
 local M = {
   "RRethy/vim-illuminate",
   event = "VeryLazy",

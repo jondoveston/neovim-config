@@ -1,3 +1,4 @@
+-- https://github.com/neovim/nvim-lspconfig
 local M = {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },

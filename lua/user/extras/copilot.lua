@@ -1,3 +1,4 @@
+-- https://github.com/zbirenbaum/copilot.lua
 local M = {
   "zbirenbaum/copilot.lua",
   cmd = "Copilot",

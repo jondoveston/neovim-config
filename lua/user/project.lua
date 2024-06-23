@@ -1,3 +1,4 @@
+-- https://github.com/ahmedkhalf/project.nvim
 local M = {
   "ahmedkhalf/project.nvim",
   event = "VeryLazy",

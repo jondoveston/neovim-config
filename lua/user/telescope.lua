@@ -1,3 +1,4 @@
+-- https://github.com/nvim-telescope/telescope.nvim
 local M = {
   "nvim-telescope/telescope.nvim",
   dependencies = { { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true } },

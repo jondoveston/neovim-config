@@ -1,3 +1,4 @@
+-- https://github.com/SmiteshP/nvim-navic
 local M = {
   "SmiteshP/nvim-navic",
 }

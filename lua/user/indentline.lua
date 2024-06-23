@@ -1,3 +1,4 @@
+-- https://github.com/lukas-reineke/indent-blankline.nvim
 local M = {
   "lukas-reineke/indent-blankline.nvim",
   event = "VeryLazy",
