@@ -43,5 +43,10 @@ keymap({ "n", "x" }, "j", "gj", opts)
 keymap({ "n", "x" }, "k", "gk", opts)
 keymap("n", "<leader>w", ":lua vim.wo.wrap = not vim.wo.wrap<CR>", opts)
 
-
 vim.api.nvim_set_keymap('t', '<C-;>', '<C-\\><C-n>', opts)
+
+-- Clear highlights
+keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
+
+-- Close buffers
+keymap("n", "<C-q>", "<cmd>Bdelete!<CR>", opts)
