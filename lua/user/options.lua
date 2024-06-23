@@ -52,3 +52,16 @@ vim.cmd [[set iskeyword+=-]]
 vim.g.netrw_banner = 0
 vim.g.netrw_mouse = 2
 
+if vim.env.PYTHON3_HOST_PROG then
+vim.g.python3_host_prog = vim.env.PYTHON3_HOST_PROG
+end
+
+if vim.env.NODE_HOST_PROG then
+vim.g.node_host_prog = vim.env.NODE_HOST_PROG
+end
+
+if vim.env.RUBY_HOST_PROG then
+vim.g.ruby_host_prog = vim.env.RUBY_HOST_PROG
+end
+
+vim.g.loaded_perl_provider = 0
