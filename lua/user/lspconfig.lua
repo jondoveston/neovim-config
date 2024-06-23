@@ -66,17 +66,68 @@ function M.config()
   local lspconfig = require "lspconfig"
   local icons = require "user.icons"
 
+  -- canonical list of lsp servers
+  -- this list could be used in the ensure in mason-lspconfig
   local servers = {
-    "lua_ls",
-    "cssls",
-    "html",
-    "tsserver",
-    "eslint",
-    "tsserver",
-    "pyright",
-    "bashls",
+    "ansiblels",
+    -- "awk_ls",
+    -- "bashls",
+    -- "cssls",
+    -- "graphql",
+    -- "html",
+    "helm_ls",
     "jsonls",
+    "lua_ls",
+    -- "sqlls",
+    -- "sqls",
+    -- "vimls",
     "yamlls",
+    -- "zk"
+    -- "ltex",
+
+    -- markdown
+    "marksman",
+
+    -- crytsal
+    -- "crystalline",
+    -- "scry",
+
+    -- docker
+    "dockerls",
+    "docker_compose_language_service",
+
+    -- golang
+    "golangci_lint_ls",
+    "gopls",
+
+    -- english
+    -- "prosemd_lsp",
+    -- "grammarly",
+    -- "remark_ls",
+    -- "textlsp",
+    -- "vale_ls",
+
+    -- python
+    -- "pylsp",
+    -- "pylyzer",
+    -- "pyre",
+    -- "pyright",
+    -- "ruff_lsp",
+    -- "sourcery",
+
+    -- ruby
+    -- "standardrb",
+    -- "rubocop",
+    -- "ruby_ls",
+    -- "solargraph",
+    -- "sorbet",
+    -- "steep",
+    -- "syntax_tree",
+    -- "typeprof",
+
+    -- terraform
+    "terraformls",
+    -- "tflint",
   }
 
   local default_diagnostic_config = {
