@@ -65,3 +65,9 @@ vim.g.ruby_host_prog = vim.env.RUBY_HOST_PROG
 end
 
 vim.g.loaded_perl_provider = 0
+
+vim.opt.textwidth = 80
+vim.opt.colorcolumn = '80'
+vim.opt.wildignore = { '*/cache/*', '*/tmp/*', '*.so', '*.swp', '*.zip' }
+vim.opt.listchars = { eol = '↲', tab = '▸ ', trail = '·' }
+vim.opt.modeline = false
