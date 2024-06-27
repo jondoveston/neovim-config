@@ -131,6 +131,11 @@ function M.config()
           emoji = "",
         })[entry.source.name]
 
+        if entry.source.name == "copilot" then
+          vim_item.kind = icons.git.Copilot
+          vim_item.kind_hl_group = "CmpItemKindCopilot"
+        end
+
         if entry.source.name == "emoji" then
           vim_item.kind = icons.misc.Smiley
           vim_item.kind_hl_group = "CmpItemKindEmoji"
