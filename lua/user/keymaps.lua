@@ -5,6 +5,8 @@ keymap("n", "<Space>", "", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+keymap("n", ";", ":", opts)
+
 keymap("n", "<C-i>", "<C-i>", opts)
 
 -- Navigate buffers
