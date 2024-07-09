@@ -24,13 +24,20 @@ M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
 
   if client.supports_method "textDocument/inlayHint" then
-    vim.lsp.inlay_hint.enable(true, {  bufnr })
+    vim.lsp.inlay_hint.enable(true, { bufnr })
   end
 end
 
 function M.common_capabilities()
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+  -- https://github.com/redhat-developer/yaml-language-server/issues/912
+  capabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true,
+  }
+
   return capabilities
 end
 
