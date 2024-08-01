@@ -12,24 +12,24 @@ local M = {
 
 function M.config()
   local wk = require "which-key"
-  wk.register {
-    ["<leader>bb"] = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
-    ["<leader>fb"] = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    ["<leader>fc"] = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-    ["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Find files" },
-    ["<leader>fp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-    ["<leader>fg"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
-    ["<leader>fh"] = { "<cmd>Telescope help_tags<cr>", "Help" },
-    ["<leader>fl"] = { "<cmd>Telescope resume<cr>", "Last Search" },
-    ["<leader>fo"] = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
-    ["<leader>fi"] = { "<cmd>Telescope git_files<cr>", "Git files" },
-    ["<leader>ft"] = { "<cmd>Telescope treesitter<cr>", "Treesitter" },
-    ["<leader>fC"] = { "<cmd>Telescope commands<cr>", "Find commands" },
-    ["<leader>fH"] = { "<cmd>Telescope commands_history<cr>", "Command history" },
-    ["<leader>fs"] = { "<cmd>Telescope search_history<cr>", "Search history" },
-    ["<leader>fm"] = { "<cmd>Telescope keymaps<cr>", "Find keymaps" },
-    ["<leader>fd"] = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
-    ["<leader>fy"] = { "<cmd>Telescope yaml_schema<cr>", "YAML schema" },
+  wk.add {
+    { "<leader>bb", "<cmd>Telescope buffers previewer=false<cr>", desc = "Find" },
+    { "<leader>fb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch" },
+    { "<leader>fc", "<cmd>Telescope colorscheme<cr>", desc = "Colorscheme" },
+    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+    { "<leader>fp", "<cmd>lua require('telescope').extensions.projects.projects()<cr>", desc = "Projects" },
+    { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Find Text" },
+    { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help" },
+    { "<leader>fl", "<cmd>Telescope resume<cr>", desc = "Last Search" },
+    { "<leader>fo", "<cmd>Telescope oldfiles<cr>", desc = "Recent File" },
+    { "<leader>fi", "<cmd>Telescope git_files<cr>", desc = "Git files" },
+    { "<leader>ft", "<cmd>Telescope treesitter<cr>", desc = "Treesitter" },
+    { "<leader>fC", "<cmd>Telescope commands<cr>", desc = "Find commands" },
+    { "<leader>fH", "<cmd>Telescope commands_history<cr>", desc = "Command history" },
+    { "<leader>fs", "<cmd>Telescope search_history<cr>", desc = "Search history" },
+    { "<leader>fm", "<cmd>Telescope keymaps<cr>", desc = "Find keymaps" },
+    { "<leader>fd", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
+    { "<leader>fy", "<cmd>Telescope yaml_schema<cr>", desc = "YAML schema" },
   }
 
   local icons = require "user.icons"
