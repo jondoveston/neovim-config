@@ -21,6 +21,8 @@ function M.config()
   -- ensure other tools in mason name format
   local utils = {
     "shellcheck",
+    "golangci-lint-langserver",
+    "gopls",
     -- "gotests",
     -- "misspell",
   }

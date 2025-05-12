@@ -34,7 +34,7 @@ function M.config()
       "vimdoc",
       "yaml",
     },
-    highlight = { enable = true },
+    highlight = { enable = false },
     indent = { enable = true },
   }
 end
