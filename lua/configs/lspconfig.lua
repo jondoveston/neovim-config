@@ -1,4 +1,5 @@
 -- https://github.com/neovim/nvim-lspconfig
+
 local M = {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
@@ -43,14 +44,19 @@ end
 
 M.toggle_inlay_hints = function()
   local bufnr = vim.api.nvim_get_current_buf()
-  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr }), { bufnr })
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr }, { bufnr })
 end
 
 function M.config()
+  -- require("nvchad.configs.lspconfig").defaults()
   local wk = require "which-key"
   wk.add {
     { "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
-    { "<leader>lf", "<cmd>lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<cr>", desc = "Format" },
+    {
+      "<leader>lf",
+      "<cmd>lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<cr>",
+      desc = "Format",
+    },
     { "<leader>li", "<cmd>LspInfo<cr>", desc = "Info" },
     { "<leader>lj", "<cmd>lua vim.diagnostic.goto_next()<cr>", desc = "Next Diagnostic" },
     { "<leader>lh", "<cmd>lua require('user.lspconfig').toggle_inlay_hints()<cr>", desc = "Hints" },
@@ -63,7 +69,7 @@ function M.config()
   }
 
   local lspconfig = require "lspconfig"
-  local icons = require "user.icons"
+  -- local icons = require "user.icons"
 
   -- canonical list of lsp servers
   -- this list could be used in the ensure in mason-lspconfig
@@ -132,12 +138,12 @@ function M.config()
   local default_diagnostic_config = {
     signs = {
       active = true,
-      values = {
-        { name = "DiagnosticSignError", text = icons.diagnostics.Error },
-        { name = "DiagnosticSignWarn", text = icons.diagnostics.Warning },
-        { name = "DiagnosticSignHint", text = icons.diagnostics.Hint },
-        { name = "DiagnosticSignInfo", text = icons.diagnostics.Information },
-      },
+      -- values = {
+      --   { name = "DiagnosticSignError", text = icons.diagnostics.Error },
+      --   { name = "DiagnosticSignWarn", text = icons.diagnostics.Warning },
+      --   { name = "DiagnosticSignHint", text = icons.diagnostics.Hint },
+      --   { name = "DiagnosticSignInfo", text = icons.diagnostics.Information },
+      -- },
     },
     virtual_text = false,
     update_in_insert = false,

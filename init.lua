@@ -1,44 +1,37 @@
-require "user.launch"
-require "user.options"
-require "user.keymaps"
-require "user.autocmds"
-spec "user.colorscheme"
-spec "user.devicons"
-spec "user.treesitter"
-spec "user.mason"
-spec "user.schemastore"
-spec "user.lspconfig"
-spec "user.cmp"
-spec "user.telescope"
-spec "user.none-ls"
-spec "user.illuminate"
-spec "user.gitsigns"
-spec "user.whichkey"
-spec "user.nvimtree"
-spec "user.comment"
-spec "user.lualine"
-spec "user.navic"
-spec "user.breadcrumbs"
-spec "user.harpoon"
-spec "user.neotest"
-spec "user.autopairs"
-spec "user.neogit"
-spec "user.alpha"
-spec "user.project"
-spec "user.indentline"
-spec "user.toggleterm"
-spec "user.extras.copilot"
-spec "user.extras.bufdelete"
-spec "user.extras.trouble"
-spec "user.extras.vim-helm"
-spec "user.extras.wrapping"
-spec "user.extras.obsidian"
-spec "user.extras.smart-splits"
-spec "user.extras.gitlinker"
-spec "user.extras.vim-fugitive"
-spec "user.extras.eyeliner"
-spec "user.extras.navbuddy"
-spec "user.extras.oil"
-spec "user.extras.ufo"
-spec "user.extras.miniicons"
-require "user.lazy"
+vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
+vim.g.mapleader = " "
+
+-- bootstrap lazy and all plugins
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+
+if not vim.uv.fs_stat(lazypath) then
+  local repo = "https://github.com/folke/lazy.nvim.git"
+  vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
+end
+
+vim.opt.rtp:prepend(lazypath)
+
+local lazy_config = require "configs.lazy"
+
+-- load plugins
+require("lazy").setup({
+  {
+    "NvChad/NvChad",
+    lazy = false,
+    branch = "v2.5",
+    import = "nvchad.plugins",
+  },
+
+  { import = "plugins" },
+}, lazy_config)
+
+-- load theme
+dofile(vim.g.base46_cache .. "defaults")
+dofile(vim.g.base46_cache .. "statusline")
+
+require "options"
+require "nvchad.autocmds"
+
+vim.schedule(function()
+  require "mappings"
+end)
