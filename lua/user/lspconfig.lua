@@ -117,7 +117,7 @@ function M.config()
     -- ruby
     -- "standardrb",
     -- "rubocop",
-    -- "ruby_ls",
+    "ruby_lsp",
     -- "solargraph",
     -- "sorbet",
     -- "steep",
