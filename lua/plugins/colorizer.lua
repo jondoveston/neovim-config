@@ -1,5 +1,6 @@
+-- https://github.com/catgoose/nvim-colorizer.lua
 local M = {
-  "NvChad/nvim-colorizer.lua",
+  "catgoose/nvim-colorizer.lua",
   event = { "BufReadPost", "BufNewFile" },
 }
 
