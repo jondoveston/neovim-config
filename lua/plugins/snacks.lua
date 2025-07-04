@@ -22,6 +22,15 @@ local M = {
     picker = {
       sources = {
         explorer = {},
+        notifications = {},
+      },
+    },
+    ---@type table<string, snacks.win.Config>
+    styles = {
+      notification = {
+        wo = {
+          wrap = true,
+        },
       },
     },
   },
@@ -36,6 +45,8 @@ local M = {
     { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files", },
     { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer", },
     { "<leader>fg", function() Snacks.picker.grep() end, desc = "Grep", },
+    -- { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
+    { "<leader>n",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
     -- stylua: ignore end
 
     {
@@ -64,7 +75,6 @@ local M = {
     -- { "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
     -- { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
     -- { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
-    -- { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
     -- { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
     -- -- find
     -- { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
