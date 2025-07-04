@@ -5,6 +5,7 @@ require "user.autocmds"
 
 spec "plugins.snacks"
 
+spec "plugins.adr-tools"
 spec "plugins.autopairs"
 -- spec "plugins.breadcrumbs"
 -- spec "plugins.cellular-automaton"
