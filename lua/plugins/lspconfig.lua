@@ -104,7 +104,7 @@ function M.config()
     -- "grammarly",
     -- "remark_ls",
     -- "textlsp",
-    -- "vale_ls",
+    "vale_ls",
 
     -- python
     -- "pylsp",

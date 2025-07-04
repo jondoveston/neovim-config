@@ -159,7 +159,7 @@ function M.config()
       -- english TBD
       hover.dictionary,
       diagnostics.commitlint,
-      diagnostics.vale,
+      -- diagnostics.vale,
       -- diagnostics.misspell, deprecated
       -- completion.spell.with({ filetypes = { "markdown" } }),
       -- diagnostics.write_good,
