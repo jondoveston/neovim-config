@@ -1,6 +1,7 @@
 -- https://github.com/epwalsh/obsidian.nvim
 local M = {
-  "epwalsh/obsidian.nvim",
+  "jondoveston/obsidian.nvim",
+  branch = "add-weekly-notes",
   version = "*", -- recommended, use latest release instead of latest commit
   lazy = false,
   -- ft = "markdown",
@@ -17,8 +18,8 @@ local M = {
   keys = {
     {
       "<leader>j",
-      "<cmd>ObsidianToday<cr>",
-      desc = "Open todays note in Obsidian",
+      "<cmd>ObsidianThisWeek<cr>",
+      desc = "Open this weeks note in Obsidian",
     },
   },
 }
