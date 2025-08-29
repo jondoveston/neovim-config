@@ -1,7 +1,8 @@
 -- https://github.com/folke/trouble.nvim
+
 local M = {
   "folke/trouble.nvim",
-  opts = {}, -- for default options, refer to the configuration section for custom setup.
+  opts = {},
   cmd = "Trouble",
   keys = {
     {
@@ -36,9 +37,5 @@ local M = {
     },
   },
 }
-
-function M.config()
-  require("trouble").setup()
-end
 
 return M

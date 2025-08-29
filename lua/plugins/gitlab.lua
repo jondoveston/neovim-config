@@ -1,4 +1,4 @@
-local M1 = {
+local M = {
   "https://gitlab.com/jondoveston/gitlab.vim.git",
   branch = "experimental-branch",
   -- Activate when a file is created/opened
@@ -47,25 +47,4 @@ local M1 = {
   },
 }
 
-local M2 = {
-  -- Assuming you init/setup snacks.nvim in a different file
-  "folke/snacks.nvim",
-  opts = function()
-    Snacks.toggle
-      .new({
-        id = "GitLab Code Suggestions",
-        name = "GitLab Code Suggestions",
-        get = function()
-          return vim.b.gitlab_status_label == "enabled"
-        end,
-        set = function(_)
-          vim.cmd [[execute "insert \<Plug>GitLabToggleCodeSuggestions"]]
-          -- vim.cmd [[execute "insert \<Plug>GitLabCodeSuggestionsStart"]]
-          -- vim.cmd [[execute "insert \<Plug>GitLabCodeSuggestionsStop"]]
-        end,
-      })
-      :map "<leader>ug"
-  end,
-}
-
-return { M1, M2 }
+return M
