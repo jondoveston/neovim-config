@@ -47,7 +47,22 @@ local M = {
     { "<leader>fg", function() Snacks.picker.grep() end, desc = "Grep", },
     -- { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
     { "<leader>n",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
+    { "<leader>m", function() Snacks.picker.marks() end, desc = "Marks" },
+    { "<leader>J", function() Snacks.picker.jumps() end, desc = "Jumps" },
     -- stylua: ignore end
+
+    {
+      "<leader>j",
+      function()
+        Snacks.picker.jumps {
+          filter = function(item)
+            local cwd = vim.fn.getcwd()
+            return item.filename and vim.startswith(item.filename, cwd)
+          end,
+        }
+      end,
+      desc = "Jumps",
+    },
 
     {
       "<leader>fb",
@@ -108,10 +123,8 @@ local M = {
     -- { "<leader>sh", function() Snacks.picker.help() end, desc = "Help Pages" },
     -- { "<leader>sH", function() Snacks.picker.highlights() end, desc = "Highlights" },
     -- { "<leader>si", function() Snacks.picker.icons() end, desc = "Icons" },
-    -- { "<leader>sj", function() Snacks.picker.jumps() end, desc = "Jumps" },
     -- { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
     -- { "<leader>sl", function() Snacks.picker.loclist() end, desc = "Location List" },
-    -- { "<leader>sm", function() Snacks.picker.marks() end, desc = "Marks" },
     -- { "<leader>sM", function() Snacks.picker.man() end, desc = "Man Pages" },
     -- { "<leader>sp", function() Snacks.picker.lazy() end, desc = "Search for Plugin Spec" },
     -- { "<leader>sq", function() Snacks.picker.qflist() end, desc = "Quickfix List" },
