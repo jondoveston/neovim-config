@@ -23,7 +23,7 @@ end
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
 
-  if client.supports_method "textDocument/inlayHint" then
+  if client.supports_method("textDocument/inlayHint") then
     vim.lsp.inlay_hint.enable(true, { bufnr })
   end
 end
@@ -47,10 +47,14 @@ M.toggle_inlay_hints = function()
 end
 
 function M.config()
-  local wk = require "which-key"
-  wk.add {
+  local wk = require("which-key")
+  wk.add({
     { "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
-    { "<leader>lf", "<cmd>lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<cr>", desc = "Format" },
+    {
+      "<leader>lf",
+      "<cmd>lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<cr>",
+      desc = "Format",
+    },
     { "<leader>li", "<cmd>LspInfo<cr>", desc = "Info" },
     { "<leader>lj", "<cmd>lua vim.diagnostic.goto_next()<cr>", desc = "Next Diagnostic" },
     { "<leader>lh", "<cmd>lua require('user.lspconfig').toggle_inlay_hints()<cr>", desc = "Hints" },
@@ -60,10 +64,10 @@ function M.config()
     { "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename" },
     -- { "<leader>la", group = "LSP" },
     -- { "<leader>laa", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action", mode = "v" },
-  }
+  })
 
-  local lspconfig = require "lspconfig"
-  local icons = require "user.icons"
+  local lspconfig = require("lspconfig")
+  local icons = require("user.icons")
 
   -- canonical list of lsp servers
   -- this list could be used in the ensure for mason v2 later when there is a solution
@@ -86,6 +90,9 @@ function M.config()
 
     -- markdown
     "marksman",
+
+    -- typst
+    "tinymist",
 
     -- crytsal
     -- "crystalline",
@@ -175,7 +182,7 @@ function M.config()
     end
 
     if server == "lua_ls" then
-      require("neodev").setup {}
+      require("neodev").setup({})
     end
 
     lspconfig[server].setup(opts)

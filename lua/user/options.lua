@@ -40,36 +40,36 @@ vim.opt.title = false
 -- colorcolumn = "80",
 -- colorcolumn = "120",
 vim.opt.fillchars = vim.opt.fillchars + "eob: "
-vim.opt.fillchars:append {
+vim.opt.fillchars:append({
   stl = " ",
-}
+})
 
-vim.opt.shortmess:append "c"
+vim.opt.shortmess:append("c")
 
-vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[set iskeyword+=-]]
+vim.cmd("set whichwrap+=<,>,[,],h,l")
+vim.cmd([[set iskeyword+=-]])
 
 vim.g.netrw_banner = 0
 vim.g.netrw_mouse = 2
 
 if vim.env.PYTHON3_HOST_PROG then
-vim.g.python3_host_prog = vim.env.PYTHON3_HOST_PROG
+  vim.g.python3_host_prog = vim.env.PYTHON3_HOST_PROG
 end
 
 if vim.env.NODE_HOST_PROG then
-vim.g.node_host_prog = vim.env.NODE_HOST_PROG
+  vim.g.node_host_prog = vim.env.NODE_HOST_PROG
 end
 
 if vim.env.RUBY_HOST_PROG then
-vim.g.ruby_host_prog = vim.env.RUBY_HOST_PROG
+  vim.g.ruby_host_prog = vim.env.RUBY_HOST_PROG
 end
 
 vim.g.loaded_perl_provider = 0
 
 vim.opt.textwidth = 80
-vim.opt.colorcolumn = '80'
-vim.opt.wildignore = { '*/cache/*', '*/tmp/*', '*.so', '*.swp', '*.zip' }
-vim.opt.listchars = { eol = '↲', tab = '▸ ', trail = '·' }
+vim.opt.colorcolumn = "80"
+vim.opt.wildignore = { "*/cache/*", "*/tmp/*", "*.so", "*.swp", "*.zip" }
+vim.opt.listchars = { eol = "↲", tab = "▸ ", trail = "·" }
 vim.opt.modeline = false
 
 vim.g.do_filetype_lua = 1
@@ -78,7 +78,9 @@ vim.filetype.add({
     ["playbook.ya?ml"] = "yaml.ansible",
     ["site.ya?ml"] = "yaml.ansible",
     ["main.ya?ml"] = "yaml.ansible",
-    [".*/[^.]+%.([^.]+)%.j2"] = function(path, bufnr, ext) return ext .. ".jinja2" end,
+    [".*/[^.]+%.([^.]+)%.j2"] = function(path, bufnr, ext)
+      return ext .. ".jinja2"
+    end,
     [".*/[^.]+%.j2"] = "jinja2",
     [".*/group_vars/.+%.ya?ml"] = "yaml.ansible",
     [".*/host_vars/.+%.ya?ml"] = "yaml.ansible",
@@ -92,3 +94,5 @@ vim.filetype.add({
     ["helmfile.*%.yaml"] = "helm",
   },
 })
+
+vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH

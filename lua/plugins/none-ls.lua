@@ -75,6 +75,9 @@ function M.config()
       -- diagnostics.revive,
       -- diagnostics.staticcheck,
 
+      -- typst
+      formatting.typstyle,
+
       -- shell
       -- formatting.shfmt,
       -- formatting.beautysh,
