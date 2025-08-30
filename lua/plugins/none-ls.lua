@@ -6,28 +6,28 @@ local M = {
     {
       "nvim-lua/plenary.nvim",
     },
-    {
-      "jay-babu/mason-null-ls.nvim",
-      event = { "BufReadPre", "BufNewFile" },
-    },
+    -- {
+    --   "jay-babu/mason-null-ls.nvim",
+    --   event = { "BufReadPre", "BufNewFile" },
+    -- },
     {
       "gbprod/none-ls-luacheck.nvim",
     },
     {
       "gbprod/none-ls-shellcheck.nvim",
     },
-  }
+  },
 }
 
 function M.config()
   local null_ls = require "null-ls"
 
-  null_ls.register(require("none-ls-luacheck.diagnostics.luacheck"))
-  null_ls.register(require("none-ls-shellcheck.diagnostics"))
-  null_ls.register(require("none-ls-shellcheck.code_actions"))
+  null_ls.register(require "none-ls-luacheck.diagnostics.luacheck")
+  null_ls.register(require "none-ls-shellcheck.diagnostics")
+  null_ls.register(require "none-ls-shellcheck.code_actions")
 
   local formatting = null_ls.builtins.formatting
-  local diagnostics =  null_ls.builtins.diagnostics
+  local diagnostics = null_ls.builtins.diagnostics
   local code_actions = null_ls.builtins.code_actions
   local hover = null_ls.builtins.hover
   local completion = null_ls.builtins.completion
@@ -174,10 +174,10 @@ function M.config()
     },
   }
 
-  require("mason-null-ls").setup {
-    ensure_installed = {},
-    automatic_installation = true,
-  }
+  -- require("mason-null-ls").setup {
+  --   ensure_installed = {},
+  --   automatic_installation = true,
+  -- }
 end
 
 return M

@@ -66,7 +66,7 @@ function M.config()
   local icons = require "user.icons"
 
   -- canonical list of lsp servers
-  -- this list could be used in the ensure in mason-lspconfig
+  -- this list could be used in the ensure for mason v2 later when there is a solution
   local servers = {
     "ansiblels",
     -- "awk_ls",
