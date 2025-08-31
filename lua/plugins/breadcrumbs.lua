@@ -1,10 +1,8 @@
 -- https://github.com/LunarVim/breadcrumbs.nvim
+
 local M = {
   "LunarVim/breadcrumbs.nvim",
+  opts = {},
 }
-
-function M.config()
-  require("breadcrumbs").setup()
-end
 
 return M

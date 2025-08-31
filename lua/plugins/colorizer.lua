@@ -1,11 +1,9 @@
 -- https://github.com/catgoose/nvim-colorizer.lua
+
 local M = {
   "catgoose/nvim-colorizer.lua",
   event = { "BufReadPost", "BufNewFile" },
-}
-
-function M.config()
-  require("colorizer").setup {
+  opts = {
     filetypes = {
       "typescript",
       "typescriptreact",
@@ -23,7 +21,7 @@ function M.config()
       tailwind = "both",
     },
     buftypes = {},
-  }
-end
+  },
+}
 
 return M

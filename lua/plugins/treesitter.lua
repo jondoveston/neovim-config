@@ -6,7 +6,7 @@ local M = {
 }
 
 function M.config()
-  require("nvim-treesitter.configs").setup {
+  require("nvim-treesitter.configs").setup({
     ensure_installed = {
       "bash",
       "c",
@@ -27,16 +27,18 @@ function M.config()
       "markdown",
       "markdown_inline",
       "python",
+      "regex",
       "ruby",
       "ssh_config",
       "terraform",
+      "typst",
       "vim",
       "vimdoc",
       "yaml",
     },
     highlight = { enable = false },
     indent = { enable = true },
-  }
+  })
 end
 
 return M

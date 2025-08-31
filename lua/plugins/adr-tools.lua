@@ -1,17 +1,15 @@
-M = {
+local M = {
   "adr-tools",
-  dir = vim.fn.stdpath "config" .. "/adr-tools.nvim",
-  config = function()
-    require("adr-tools").setup()
-  end,
+  dir = vim.fn.stdpath("config") .. "/adr-tools.nvim",
+  opts = {},
   keys = {
     {
       "<leader>a",
       function()
-        local adr = require "adr-tools"
+        local adr = require("adr-tools")
         local files = adr.list()
-        local snacks = require "snacks"
-        snacks.picker {
+        local snacks = require("snacks")
+        snacks.picker({
           prompt = "Select an ADR: ",
           format = "text",
           finder = function()
@@ -25,15 +23,15 @@ M = {
             end
             return items
           end,
-        }
+        })
       end,
       desc = "Select ADR",
     },
     {
       "<leader>A",
       function()
-        local adr = require "adr-tools"
-        local snacks = require "snacks"
+        local adr = require("adr-tools")
+        local snacks = require("snacks")
         snacks.input({}, function(value)
           local file = adr.new(value)
           if file then
