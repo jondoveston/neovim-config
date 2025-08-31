@@ -134,6 +134,9 @@ function M.config()
     -- terraform
     "terraformls",
     -- "tflint",
+
+    -- csharp
+    "omnisharp",
   }
 
   local default_diagnostic_config = {
