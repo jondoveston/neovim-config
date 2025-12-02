@@ -20,11 +20,11 @@ local M = {
 }
 
 function M.config()
-  local null_ls = require "null-ls"
+  local null_ls = require("null-ls")
 
-  null_ls.register(require "none-ls-luacheck.diagnostics.luacheck")
-  null_ls.register(require "none-ls-shellcheck.diagnostics")
-  null_ls.register(require "none-ls-shellcheck.code_actions")
+  null_ls.register(require("none-ls-luacheck.diagnostics.luacheck"))
+  null_ls.register(require("none-ls-shellcheck.diagnostics"))
+  null_ls.register(require("none-ls-shellcheck.code_actions"))
 
   local formatting = null_ls.builtins.formatting
   local diagnostics = null_ls.builtins.diagnostics
@@ -32,7 +32,7 @@ function M.config()
   local hover = null_ls.builtins.hover
   local completion = null_ls.builtins.completion
 
-  null_ls.setup {
+  null_ls.setup({
     debug = false,
     sources = {
       -- python TBD
@@ -79,7 +79,7 @@ function M.config()
       formatting.typstyle,
 
       -- shell
-      -- formatting.shfmt,
+      formatting.shfmt,
       -- formatting.beautysh,
       -- formatting.shellharden,
       -- code_actions.shellcheck, external plugin
@@ -107,13 +107,13 @@ function M.config()
       -- diagnostics.reek,
 
       -- ansible
-      diagnostics.ansiblelint.with { temp_dir = "/tmp" },
+      diagnostics.ansiblelint.with({ temp_dir = "/tmp" }),
 
       -- markdown TBD
       -- formatting.markdownlint,
       diagnostics.markdownlint,
       -- formatting.markdown_toc,
-      formatting.mdformat.with { extra_args = { "--wrap=80", "--number" } },
+      formatting.mdformat.with({ extra_args = { "--wrap=80", "--number" } }),
       -- formatting.ocdc,
       -- formatting.remark,
       -- formatting.terrafmt,
@@ -132,7 +132,7 @@ function M.config()
       diagnostics.checkmake,
 
       -- general
-      formatting.prettier.with {
+      formatting.prettier.with({
         filetypes = {
           "javascript",
           "javascriptreact",
@@ -148,7 +148,7 @@ function M.config()
           "toml",
         },
         extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
-      },
+      }),
       -- formatting.trim_whitespace, deprecated replace with editorconfig
       -- formatting.trim_newlines, deprecated replace with editorconfig
       diagnostics.trail_space,
@@ -175,7 +175,7 @@ function M.config()
       -- diagnostics.codespell.with({ filetypes = { "markdown", "go" } }),
       -- formatting.codespell.with({ filetypes = { "markdown", "go" } }),
     },
-  }
+  })
 
   -- require("mason-null-ls").setup {
   --   ensure_installed = {},

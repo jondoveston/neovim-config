@@ -66,7 +66,6 @@ function M.config()
     -- { "<leader>laa", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action", mode = "v" },
   })
 
-  -- local lspconfig = require("lspconfig")
   local icons = require("user.icons")
 
   -- canonical list of lsp servers
@@ -80,6 +79,7 @@ function M.config()
     -- "html",
     "helm_ls",
     "jsonls",
+    "jsonnet_ls",
     "lua_ls",
     -- "sqlls",
     -- "sqls",
@@ -188,8 +188,8 @@ function M.config()
       require("neodev").setup({})
     end
 
-    -- lspconfig[server].setup(opts)
-    vim.lsp.config(server).setup(opts)
+    vim.lsp.config(server, opts)
+    vim.lsp.enable(server)
   end
 end
 

@@ -22,6 +22,7 @@ function M.config()
       "gosum",
       "gowork",
       "json",
+      "jsonnet",
       "lua",
       "make",
       "markdown",
@@ -36,7 +37,7 @@ function M.config()
       "vimdoc",
       "yaml",
     },
-    highlight = { enable = false },
+    highlight = { enable = true },
     indent = { enable = true },
   })
 end
